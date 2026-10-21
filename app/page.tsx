@@ -521,14 +521,9 @@ export default function Home() {
       setError("请先登录后再开始面试。");
       return;
     }
-    if (!resumeFileName) {
-      setShowParsedResume(true);
-      setError("请先上传简历文件，解析成功后再生成面试题。");
-      return;
-    }
     if (resumeText.trim().length < 20) {
       setShowParsedResume(true);
-      setError("简历解析内容太少，请重新上传有效简历文件。");
+      setError("请上传简历或粘贴至少 20 个字的简历内容。");
       return;
     }
     if (jdText.trim().length < 20) {
