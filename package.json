@@ -1,0 +1,39 @@
+{
+  "name": "interview-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "playwright:install": "playwright install chromium",
+    "typecheck": "tsc --noEmit",
+    "test:smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@types/sql.js": "^1.4.11",
+    "mammoth": "^1.12.0",
+    "next": "^15.3.4",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^5.4.296",
+    "playwright": "^1.61.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sql.js": "^1.14.1",
+    "ws": "^8.21.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/ws": "^8.18.1",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "^15.3.4",
+    "typescript": "^5.8.3"
+  },
+  "license": "MIT"
+}

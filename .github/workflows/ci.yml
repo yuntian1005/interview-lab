@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run build
+      - name: Demo workflow
+        run: |
+          npm start > /tmp/interview-lab.log 2>&1 &
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:3000/api/health && break || sleep 1; done
+          npm run test:smoke
